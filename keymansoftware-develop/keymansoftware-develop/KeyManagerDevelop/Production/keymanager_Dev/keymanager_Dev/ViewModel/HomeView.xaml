@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="keymanager_Dev.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:keymanager_Dev"
+             mc:Ignorable="d" 
+             Background="Transparent"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    
+    
+    <Border CornerRadius="10"
+                    Grid.Column="0">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="{DynamicResource section_border}" Offset="0"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition MinHeight="20" MaxHeight="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+
+
+            <TextBlock  Text="Manage your passwords"
+                        HorizontalAlignment="Left"
+                        FontWeight="Medium"
+                        FontSize="18"
+                        VerticalAlignment="Center"
+                        Margin="15,0,0,0"
+                        FontFamily="Monserrat"
+                        Foreground="{DynamicResource section_text_on_border}"/>
+            
+            
+            <Grid Grid.Row="0"
+                  HorizontalAlignment="Right">
+
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource homeActionButton}" 
+                            Click="checkPass_Click"
+                                Width="auto"
+                                 Tag="{DynamicResource text_light}">
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="10,0">
+                            <TextBlock
+                                Text="Check passwords"
+                                Style="{StaticResource homeActionButtonText}"/>
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button Style="{StaticResource homeActionButton}" Click="sAllbt_Click"
+                                 Tag="{DynamicResource text_light}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                Text="Select All"
+                                Style="{StaticResource homeActionButtonText}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Style="{StaticResource homeActionButton}"
+                             x:Name="btRemove"
+                             Click="Removebt_Click"
+                            IsEnabled="False">
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                        Text="Delete"
+                                        Style="{StaticResource homeActionButtonText}"/>
+                        </StackPanel>
+
+                    </Button>
+
+                    <Button x:Name="eyeBtn" Style="{StaticResource homeActionButton}"
+                            Width="40"
+                            Click="btShowPass_Click"
+                            Margin="0,0,20,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Image x:Name="eyeButton" Source="/Images/close-eye.png" Height="25" Margin="0,0,0,03"/>
+                        </StackPanel>
+
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+
+            <Border CornerRadius="5"
+                    Grid.Row="1"
+                    Margin="0"
+                    BorderThickness="0,1"
+                    BorderBrush="{DynamicResource behindCards_BorderBrush}"
+                    Padding="5">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="{DynamicResource section_background}" Offset="0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid Grid.Row="1">
+                    
+                    <!--Content Section-->
+
+                    <ScrollViewer Grid.Row="2" x:Name="scrollSpace" 
+                                  BorderThickness="10"
+                                  VerticalScrollBarVisibility="Hidden" Padding="0,1" VerticalAlignment="Top">
+                        <ContentControl x:Name="contentControl"
+                                    Height="auto"
+                                    Margin="10,0,10,0"
+                                    VerticalAlignment="Top">
+                            <StackPanel x:Name="stackPanel" Height="auto">
+
+                            </StackPanel>
+                        </ContentControl>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+
+            <Border CornerRadius="15,15,15,15"
+                    Grid.Row="2"
+                    Margin="5">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
+                        <GradientStop Color="Transparent" Offset="0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid Grid.Row="2">
+                    <StackPanel>
+                        
+                    </StackPanel>
+                    <Button x:Name="addBtn" Style="{StaticResource addBtnStyle}" Click="addBtn_Click">
+                        <Image Source="/Images/plus.png"
+                       Width="65"
+                       Height="65"
+                       HorizontalAlignment="Center"/>
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

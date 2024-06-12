@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="EmailForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\CheckPasswordsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\EditCredentialWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewModel\AboutView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewModel\HomeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewModel\PasswordCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewModel\profileCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewModel\SettingsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Widgets\ChangePassWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Widgets\ConfirmOrCancelWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Widgets\MasterPassConfirm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Widgets\NotificationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="EmailForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\CheckPasswordsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\EditCredentialWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\UIColors_Dark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewModel\AboutView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewModel\HomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewModel\PasswordCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewModel\profileCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewModel\SettingsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Styles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\UIColors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Widgets\ChangePassWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Widgets\ConfirmOrCancelWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Widgets\MasterPassConfirm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Widgets\NotificationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,77 @@
+﻿<Window x:Class="keymanager_Dev.Pages.AddCardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:keymanager_Dev.Pages"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Background="Transparent"
+        Title="AddCardWindow" Height="520" Width="800" Closed="Close_Window">
+
+
+
+    <Border CornerRadius="15"
+            BorderThickness="4"
+            Background="{DynamicResource general_background_gradient}"
+            BorderBrush="{DynamicResource general_window_border_gradient}">
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="85"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Label Content="Save a new credential" FontFamily="Montserrat" FontSize="25" FontWeight="Medium" Foreground="{DynamicResource section_text_on_background}" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Grid.Column="0">
+                    <Label Content="Title of the card:" FontFamily="Montserrat" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource section_text_on_background}" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <TextBox x:Name="titleTxtBox" Style="{StaticResource customTextBox}" BorderBrush="{DynamicResource borderbrush_txtbox}" VerticalAlignment="Center" Margin="10,0,0,0" Height="40" Width="300" HorizontalAlignment="Left" />
+
+                    <Label Content="Username:" FontFamily="Montserrat" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource section_text_on_background}" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <TextBox x:Name="usernameTxtBox" Style="{StaticResource customTextBox}" BorderBrush="{DynamicResource borderbrush_txtbox}"  VerticalAlignment="Center" Margin="10,0,0,0" Height="40" Width="300" HorizontalAlignment="Left" />
+
+                    <Label Content="Password:" FontFamily="Montserrat" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource section_text_on_background}" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <TextBox x:Name="passwordTxtBox" Style="{StaticResource customTextBox}" BorderBrush="{DynamicResource borderbrush_txtbox}" VerticalAlignment="Center" Margin="10,0,0,0" Height="40" Width="300" HorizontalAlignment="Left"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="0,10,0,0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Set expiration date"  FontFamily="Montserrat" FontSize="18" FontWeight="Light" Foreground="{DynamicResource section_text_on_background}" VerticalAlignment="Center"  Margin="0,0,0,0"/>
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,0" HorizontalAlignment="Center">
+                        <RadioButton x:Name="firstRadioButton" Content="+1 mounth" Style="{StaticResource customRadioBtn}" Width="120" Height="40" FontSize="16" Checked="expirationTimeOption_Checked" />
+                        <RadioButton x:Name="secondRadioButton" Content="+3 mounths" Style="{StaticResource customRadioBtn}" Width="120" Height="40" FontSize="16" Checked="expirationTimeOption_Checked" IsChecked="True"/>
+                        <RadioButton x:Name="thirdRadioButton" Content="+12 mounths" Style="{StaticResource customRadioBtn}" Width="120" Height="40" FontSize="16" Checked="expirationTimeOption_Checked"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <StackPanel Orientation="Vertical">
+                    <Button x:Name="generateBtn" Content="Generate Password" Width="140" BorderBrush="{DynamicResource genpassBtn_Borderbrush }" Foreground="{StaticResource genpassBtn_Foreground}" Style="{StaticResource customBtnNormal}" Background="{DynamicResource genpassBtn_Background}" Margin="10,10,0,0" HorizontalAlignment="Left" BorderThickness="0" Click="generateBtn_Click"/>
+                    <StackPanel  Orientation="Horizontal">
+                        <CheckBox x:Name="lowercaseCheckBox" Content="Lowercase" Width="120" Style="{StaticResource customCheckBoxNormal}" HorizontalAlignment="Left" Margin="10,6,0,0"/>
+                        <CheckBox x:Name="uppercaseCheckBox" Content="Uppercase" Style="{StaticResource customCheckBoxNormal}" HorizontalAlignment="Left" Margin="10,6,0,0"/>
+                        <CheckBox x:Name="numbersCheckBox" Content="Numbers" Width="120" Style="{StaticResource customCheckBoxNormal}" HorizontalAlignment="Left" Margin="10,6,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="3">
+            </Grid>
+            <Grid Grid.Row="4">
+                <Button x:Name="cancelBtn" Content="Cancel" Style="{StaticResource ButtonConfirmStyle}" Height="40" Width="100" FontSize="24"   FontWeight="Medium"   VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="50,0,0,10" Click="cancelBtn_Click"/>
+                <Button x:Name="saveBtn" Content="Save" Style="{StaticResource ButtonConfirmStyle}"  Height="40"  Width="100" FontSize="24" FontWeight="Medium" HorizontalAlignment="Right" Margin="0,0,50,10" VerticalAlignment="Bottom" Click="saveBtn_Click"/>
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>

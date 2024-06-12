@@ -1,0 +1,90 @@
+﻿<Window x:Class="keymanager_Dev.Pages.LicenseForm"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:keymanager_Dev.Pages"
+      mc:Ignorable="d" 
+      MinHeight="450"
+      MinWidth="740"
+      MaxHeight="450"
+      MaxWidth="740"
+      ResizeMode="NoResize"
+      d:DesignHeight="450" d:DesignWidth="740"
+      Title="LicenseForm" Closing="ClosingLicense" Closed="Window_Closed"
+      AllowsTransparency="True"
+      WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Border CornerRadius="10"
+        BorderThickness="0"
+            Background="#7D7D7D">
+
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="{DynamicResource border_color}" Offset="0"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <Grid Margin="30,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" VerticalAlignment="Center" Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="titleLbl" Content="MISSING VALID LICENSE" FontSize="26" Foreground="{StaticResource text_dark}" FontWeight="Bold" Margin="0,10,0,0" Grid.Column="0"/>
+                <Button Background="Transparent" Width="40" Height="40" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,5,0" BorderBrush="Transparent" Click="cancelBtn_Click" Grid.Column="1">
+                    <Image Source="/Images/x.png"/>
+                </Button>
+            </Grid>
+            <Label x:Name="descLbl" Content="Please select a valid license file or contact with the developer.&#x0a;If you don't have a license file porportionate next code to Company." FontSize="18" Foreground="{StaticResource text_dark}" Grid.Row="1"/>
+            <Grid Grid.Row="2" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Product Code:"  FontSize="22" Foreground="{StaticResource text_dark}"  FontWeight="Bold" Grid.Column="0"/>
+                <TextBox x:Name="productKeyLbl" Text="sfdfakjqm123asdasdasd1239dfnk1" FontSize="16" Foreground="{StaticResource text_dark}" VerticalAlignment="Center"  FontWeight="Bold" Padding="4,2,4,4" IsReadOnly="True" Grid.Column="1"/>
+                <Button x:Name="copyBtn"  Height="40"  FontSize="16" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,30,0" Padding="0"  Click="copyBtn_Click" Background="Transparent" BorderBrush="Transparent" Grid.Column="2">
+                    <Image Source="/Images/copy.png" Width="40" Height="40"/>
+                </Button>
+            </Grid>
+            <Label Content="License path:" FontSize="18" Foreground="{StaticResource text_dark}"  VerticalAlignment="Bottom" Grid.Row="3"/>
+            <Grid Grid.Row="4" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="TextField"  FontSize="20" Width="400" Height="35" MaxWidth="400" TextWrapping="NoWrap" Margin="10,0,0,0" Grid.Column="0"/>
+                <Button x:Name="searchBtn"  Width="50"  Margin="30,0,0,0" Padding="0" Click="searchBtn_Click" Background="Transparent" BorderBrush="Transparent" Grid.Column="1">
+                    <Image Source="/Images/carpeta.png" Width="40" Height="40"/>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="5" VerticalAlignment="Bottom" Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="cancelBtn" Content="Cancel" Style="{StaticResource ButtonStyle}" Width="100" Height="40" Padding="0" Click="cancelBtn_Click" HorizontalAlignment="Left"  Margin="10,0,0,0"  Grid.Column="0"/>
+                <Button x:Name="validateBtn" Content="Next" Style="{StaticResource ButtonStyle}" Width="100" Height="40" Padding="0" Click="btnValidate_Click" HorizontalAlignment="Right" Margin="0,0,30,0" Grid.Column="1"/>
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>

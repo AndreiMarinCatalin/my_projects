@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\alert_card.png" />
+    <None Remove="Images\carpeta.png" />
+    <None Remove="Images\close-eye.png" />
+    <None Remove="Images\copy.png" />
+    <None Remove="Images\error.png" />
+    <None Remove="Images\eye_open.png" />
+    <None Remove="Images\information.png" />
+    <None Remove="Images\logo.png" />
+    <None Remove="Images\Logotmp.png" />
+    <None Remove="Images\plus.png" />
+    <None Remove="Images\plus_green.png" />
+    <None Remove="Images\success.png" />
+    <None Remove="Images\warning.png" />
+    <None Remove="Images\x.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\alert_card.png" />
+    <Resource Include="Images\close-eye.png" />
+    <Resource Include="Images\eye_open.png" />
+    <Resource Include="Images\plus.png" />
+    <Resource Include="Images\plus_green.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
+    <PackageReference Include="MailKit" Version="4.1.0" />
+    <PackageReference Include="Npgsql" Version="7.0.4" />
+    <PackageReference Include="RestSharp" Version="107.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\error.png" />
+    <Resource Include="Images\information.png" />
+    <Resource Include="Images\logo.png" />
+    <Resource Include="Images\warning.png" />
+    <Resource Include="Images\carpeta.png" />
+    <Resource Include="Images\copy.png" />
+    <Resource Include="Images\Logotmp.png" />
+    <Resource Include="Images\success.png" />
+    <Resource Include="Images\x.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AppTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppTexts.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AppTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

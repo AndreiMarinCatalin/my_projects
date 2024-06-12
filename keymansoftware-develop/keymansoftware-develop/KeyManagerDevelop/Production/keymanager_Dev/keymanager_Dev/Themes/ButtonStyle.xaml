@@ -1,0 +1,771 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp">
+
+    <!--Normal button style-->
+    <Style x:Key="menuButton" TargetType="RadioButton">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="0,10,0,0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource menu_button_foreground}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderThickness="7,0,0,0"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                        <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <!--Button Style on hover-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="Background" Value="{DynamicResource menu_button_background_hover}"/>
+                <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource left_border_hover}"/>
+            </Trigger>
+            <!--Activated button style-->
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="Background" Value="{DynamicResource menu_button_background_checked}"/>
+                <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource left_border_checked}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Menu button icon-->
+    <!--Menu button icon-->
+    <Style x:Key="menuButtonIcon" TargetType="fa:IconImage">
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"/>
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Margin" Value="35,0,20,0"/>
+    </Style>
+
+    <!--Menu button text-->
+    <Style x:Key="menuButtonText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+
+
+
+
+    <!--Close Control bar button-->
+    <Style x:Key="closeControlButton" TargetType="Button">
+        <Setter Property="Width" Value="35"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource closeControlButton_Foreground}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="10,0,0,0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <!--Button Style on hover-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource closeControlButton_Background_hover}"/>
+                <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource AncestorType=Button}}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <!--Maximize Control bar button-->
+    <Style x:Key="maximizeControlButton" TargetType="Button">
+        <Setter Property="Width" Value="35"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource maximizeControlButton_Foreground}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="0,0,0,0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <!--Button Style on hover-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource maximizeControlButton_Background_hover}"/>
+                <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource AncestorType=Button}}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <!--Minimize Control bar button-->
+    <Style x:Key="minimizeControlButton" TargetType="Button">
+        <Setter Property="Width" Value="35"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource minimizeControlButton_Foreground}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="0,0,0,0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <!--Button Style on hover-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource minimizeControlButton_Background_hover}"/>
+                <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource AncestorType=Button}}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Menu button icon-->
+    <Style x:Key="controlButtonIcon" TargetType="fa:IconImage">
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+        <Setter Property="Width" Value="9"/>
+        <Setter Property="Height" Value="9"/>
+    </Style>
+
+
+
+
+
+    <!--icon button-->
+    <Style x:Key="iconButton" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource iconButton_Foreground}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <!--Button Style on hover-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+
+
+
+
+    <!--Menu button icon-->
+    <Style x:Key="iconButtonIcon" TargetType="fa:IconImage">
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+        <Setter Property="Width" Value="16"/>
+        <Setter Property="Height" Value="16"/>
+    </Style>
+
+
+
+
+    <!--User button-->
+    <Style x:Key="userBotton" TargetType="Button">
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Background" Value="{DynamicResource userBotton_Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource foreground_txtbox}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="0,0,0,10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <!--Button Style on hover-->
+            <!--Button Style on hover-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Margin" Value="0,0,0,0"/>
+                <Setter Property="Background" Value="{DynamicResource userBotton_Background_hover}"/>
+                <Setter Property="Foreground" Value="{DynamicResource foreground_txtbox_hover}"/>
+                <Setter Property="BorderBrush" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Menu button icon-->
+    <Style x:Key="userBottonIcon" TargetType="fa:IconImage">
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
+    </Style>
+
+
+    <!--user button text-->
+    <Style x:Key="userButtonText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="Padding" Value="10,0,10,0"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="Margin" Value="0,4,0,0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+
+
+
+
+
+
+
+    <!--Home action button-->
+    <Style x:Key="homeActionButton" TargetType="Button">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
+        <Setter Property="Foreground" Value="{DynamicResource homeActionBtn_text_color}"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0" Color="{DynamicResource homeActionBtn_color1}"/>
+                    <GradientStop Offset="0.5" Color="{DynamicResource homeActionBtn_color1}"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="4,4,4,4">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="false">
+
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Margin" Value="0,0,10,0"/>
+                <Setter Property="Background" Value="{DynamicResource homeActionBtn_background}"/>
+                <!--<Setter Property="BorderBrush" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>-->
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Menu button icon-->
+    <Style x:Key="homeActionBottonIcon" TargetType="fa:IconImage">
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
+    </Style>
+
+
+    <!--user button text-->
+    <Style x:Key="homeActionButtonText" TargetType="TextBlock">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Button}}" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource homeActionBtn_text_color}" />
+            </DataTrigger>
+        </Style.Triggers>
+        <Setter Property="Padding" Value="0,0,0,0"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <!--PasswordCard CheckButton-->
+    <Style x:Key="btnCheckBoxStyle" TargetType="Button">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Background" Value="{DynamicResource checkbox_card_background}" />
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="Content" Value="⭕"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <!--Border-->
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="0,7,7,0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <!--MouseOver-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Background" Value="{DynamicResource checkbox_card_background_hover}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="passBoxStyle" TargetType="PasswordBox">
+        <Setter Property="Background" Value="{DynamicResource passBoxStyle_Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource passBoxStyle_Foreground}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Padding" Value="5,5,0,0" />
+    </Style>
+
+    <Style x:Key="usernameCardStyle" TargetType="TextBox">
+        <Setter Property="Background" Value="{DynamicResource usernameCardStyle_Background}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource usernameCardStyle_Foreground}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="Padding" Value="5,0,0,0"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+
+    <Style x:Key="ButtonConfirmStyle" TargetType="Button">
+        <Setter Property="Padding" Value="10 0 10 0"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="MinWidth" Value="80"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Background" Value="{DynamicResource  btnStyle_Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource btnStyle_Foreground}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="5"
+                            Padding="{TemplateBinding Padding}"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Foreground" Value="{DynamicResource btnStyle_Foreground_hover}"/>
+                <Setter Property="Background" Value="{DynamicResource btnStyle_Background_hover}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+
+
+    <!--User button-->
+    <Style x:Key="addBtnStyle" TargetType="Button">
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="Height" Value="70"/>
+        <Setter Property="Background" Value="{DynamicResource addBtn_background}"/>
+        <Setter Property="Margin" Value="0,-10,0,0"/>
+        <!--<Setter Property="Foreground" Value="{StaticResource plainTextColor4}"/>-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="15">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <!--Button Style on hover-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="-2,0" EndPoint="0,5">
+                            <GradientStop Offset="0" Color="{DynamicResource addBtn_background_hover1}"/>
+                            <GradientStop Offset="1" Color="{DynamicResource addBtn_background_hover2}"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <!--<Setter Property="BorderBrush" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>-->
+            </Trigger>
+            <!--Button Style on hover-->
+            <Trigger Property="IsPressed" Value="True">
+                <!--<Setter Property="Background" Value="blue"/>-->
+                <!--<Setter Property="BorderBrush" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>-->
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style x:Key="TextBoxStyle" TargetType="PasswordBox">
+        <!--<Setter Property="Text" Value="Hola mundo"/>-->
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background" Value="#212C5E"/>
+        <Setter Property="BorderThickness" Value="0 0 0 4"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource passwordBoxStyle_BorderBrush_hover}"/>
+        <Setter Property="Padding" Value="5 5 0 0"/>
+        <Setter Property="Cursor" Value="IBeam"/>
+        <Setter Property="Foreground" Value="{DynamicResource passwordBoxStyle_Foreground_hover}"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="AllowDrop" Value="True"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="PasswordBox">
+                    <Border 
+                        CornerRadius="0"
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        SnapsToDevicePixels="True">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="False"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+                            <Label x:Name="WaterMarkerLabel"
+                                   Content="{TemplateBinding Tag}"
+                                   FontWeight="{TemplateBinding FontWeight}"
+                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                   HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                   Visibility="Collapsed"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   Padding="{TemplateBinding Padding}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Password.Length, RelativeSource={RelativeSource Self}}" Value="0">
+                            <Setter Property="Visibility" TargetName="WaterMarkerLabel" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Password.Length, RelativeSource={RelativeSource Self}}" Value="1">
+                            <Setter Property="Visibility" TargetName="WaterMarkerLabel" Value="Collapsed"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBoxPassword" TargetType="TextBox">
+        <Setter Property="Foreground" Value="{DynamicResource normal_text}"/>
+        <Setter Property="TextAlignment" Value="Left"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5,0"/>
+        <Setter Property="Cursor" Value="IBeam"/>
+        <Setter Property="CaretBrush" Value="{DynamicResource normal_text}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="400"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="MaxLength" Value="16"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource borderbrush_txtbox}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border
+                        CornerRadius="5"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="False"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+                            <Label x:Name="WaterMarkerLabel"
+                                Content="{TemplateBinding Tag}"
+                                FontWeight="{TemplateBinding FontWeight}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                Visibility="Collapsed"
+                                Foreground="{TemplateBinding Foreground}"
+                                Padding="{TemplateBinding Padding}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                       <DataTrigger Binding="{Binding Text.Length, RelativeSource={RelativeSource Self}}" Value="0">
+                            <Setter Property="Visibility" TargetName="WaterMarkerLabel" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Text.Length, RelativeSource={RelativeSource Self}}" Value="1">
+                            <Setter Property="Visibility" TargetName="WaterMarkerLabel" Value="Collapsed"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="customTextBox" TargetType="TextBox">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property ="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5,0,10,0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource borderbrush_txtbox}"/>
+        <Setter Property="Foreground" Value="{DynamicResource foreground_txtbox_}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border 
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="5"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}">
+                        <ScrollViewer x:Name="PART_ContentHost"
+                        Focusable="false"
+                        HorizontalScrollBarVisibility="Hidden"
+                        VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="customPasswordBox" TargetType="PasswordBox">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property ="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5,0,10,0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="4"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="PasswordBox">
+                    <Border 
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="5"
+                        Padding="{TemplateBinding Padding}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}">
+                        <ScrollViewer x:Name="PART_ContentHost"
+                        Focusable="false"
+                        HorizontalScrollBarVisibility="Hidden"
+                        VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <!--alert DateTime button-->
+    <Style x:Key="alertDateTimeStyle" TargetType="Button">
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="10,10,10,10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="customCheckBoxNormal" TargetType="CheckBox">
+        <Setter Property="IsChecked" Value="True"/>
+        <Setter Property="Content" Value="⭕ + {}"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource passOp_borderbrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource passOp_foreground}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Background" Value="{DynamicResource passOp_background}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="False">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Background" Value="{DynamicResource passOp_background_negative}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="customBtnNormal" TargetType="Button">
+        <Setter Property="Foreground" Value="{DynamicResource customBtnNormal_Foreground}"/>
+        <Setter Property="Background" Value="{DynamicResource customBtnNormal_Bacground}"/> 
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Width" Value="70"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Background" Value="{DynamicResource customBtnNormal_Bacground_hover}"/>
+                <Setter Property="Foreground" Value="{DynamicResource customBtnNormal_Foreground_hover}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="customRadioBtn" TargetType="RadioButton">
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value ="Medium"/>
+        <Setter Property="Foreground" Value="{DynamicResource expirationDateBtn_foreground}"/>
+        <Setter Property="Background" Value ="Transparent"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource expirationDateBtn_borderbrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="{DynamicResource expirationDateBtn_background_selected}"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Foreground" Value="{DynamicResource expirationDateBtn_foreground_selected}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="labelInformation" TargetType="Label">
+        <Setter Property="Foreground" Value="{DynamicResource section_text_on_background}"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+
+
+    <Style x:Key="toggleButtonStyle" TargetType="ToggleButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border x:Name="border" 
+                                CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource themeToggleBtn_background}" />
+                        </Trigger> 
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource themeToggleBtn_background}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--TextBlocks--> 
+    <Style x:Key="TextblockStyle" TargetType="TextBlock">
+        <Setter Property="Height" Value="auto"/>
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Margin" Value="0,0,30,0"/>
+        <Setter Property="Foreground" Value="{DynamicResource section_text_on_background}" />
+    </Style>
+
+    <!--TextBlocks LINK-->
+    <Style x:Key="Textblock_Link_Style" TargetType="TextBlock">
+        <Setter Property="Height" Value="auto"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Margin" Value="10,0,30,0"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="TextDecorations" Value="Underline"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Foreground" Value="{DynamicResource section_text_on_background}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="#91C8E4"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="customLabel" TargetType="Label">
+        <Setter Property="Foreground" Value="{DynamicResource section_text_on_background}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+    </Style>
+
+
+</ResourceDictionary>

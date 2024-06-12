@@ -1,0 +1,59 @@
+# ignore folders
+.idea
+.vs
+venv
+ai
+__pycache__
+# ignore the bin and obj folders in specific project
+KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/bin
+KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/obj
+KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/.vs
+KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/.vscode
+KeyManagerDevelop/KeyManApi
+KeyManagerDevelop/Production/Setup
+# ignore all bin and obj folders in any location
+**/bin/
+**/obj/
+
+# ignore all .vs folders in any location
+**/.vs/
+
+# ignore .suo files
+*.suo
+
+# ignore .cache files
+*.cache
+
+# ignore .vsidx files
+*.vsidx
+
+# ignore .lref files
+*.lref
+
+# ignore .assets.cache files
+*.assets.cache
+
+# ignore log + txt
+*.log
+
+*/outputCreation.txt
+*.csv
+*.visum
+*.txt
+*.pkl
+*.h5
+/KeyManagerDevelop/Production/keymanager_Dev/.vs/keymanager_Dev/FileContentIndex/c3d3b4de-d500-422f-9efb-458cd4adb470.vsidx
+/KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/obj/Debug/net6.0-windows/keymanager_Dev.assets.cache
+/KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/obj/Debug/net6.0-windows/keymanager_Dev.csproj.AssemblyReference.cache
+/KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/obj/Debug/net6.0-windows/keymanager_Dev.designer.deps.json
+/KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/obj/Debug/net6.0-windows/keymanager_Dev.designer.runtimeconfig.json
+/KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/obj/Debug/net6.0-windows/keymanager_Dev_MarkupCompile.i.cache
+/KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/obj/keymanager_Dev.csproj.nuget.dgspec.json
+/KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/obj/keymanager_Dev.csproj.nuget.g.props
+/KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/obj/keymanager_Dev.csproj.nuget.g.targets
+/KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/obj/project.assets.json
+/KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/obj/project.nuget.cache
+/KeyManagerDevelop/Production/keymanager_Dev/.vs/keymanager_Dev/FileContentIndex/c3d3b4de-d500-422f-9efb-458cd4adb470.vsidx
+/KeyManagerDevelop/Production/keymanager_Dev/keymanager_Dev/obj/Debug/net6.0-windows/keymanager_Dev.assets.cache
+/KeyManagerDevelop/Production/keymanager_Dev/.vs/keymanager_Dev/v17/.suo
+/KeyManagerDevelop/Production/keymanager_Dev/.vs/keymanager_Dev/v17/.futdcache.v2

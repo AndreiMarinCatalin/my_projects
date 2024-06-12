@@ -1,0 +1,172 @@
+﻿<Window x:Class="keymanager_Dev.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:keymanager_Dev"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="MainWindow" 
+        Width="1280"
+        Height="720"
+        AllowsTransparency="True"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent">
+
+ 
+   
+
+    <Border CornerRadius="10"
+            BorderThickness="0">
+
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="{DynamicResource border_color}" Offset="0"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid>
+            <Grid.ColumnDefinitions>
+               <!--Navigation menu-->
+                <ColumnDefinition MinWidth="150" MaxWidth="210"/>
+                <!--Content section-->
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--Navigation Menu-->
+            <Border CornerRadius="10,0,0,10"
+                    Grid.Column="0" 
+                    Background="{DynamicResource general_background_gradient}"
+                    BorderThickness="0,0,1,0"
+                    BorderBrush="{DynamicResource right_border}">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0">
+                    <!--Logo-->
+                    <StackPanel Orientation="Vertical"
+                                Height="auto"
+                                Margin="10,25,0,40">
+
+                        <Image Source="/Images/logo.png" Height="65"/>
+                        <TextBlock Text="KeyManager"
+                                   Foreground="{DynamicResource text_dark}"
+                                   FontSize="26"
+                                   FontFamily="Montserrat"
+                                   FontWeight="Heavy"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,20,0,0"/>
+                    </StackPanel>
+
+                    <!--Menu Buttons-->
+                    <RadioButton x:Name="homeBtn"
+                                 Style="{StaticResource menuButton}"
+                                 Tag="{DynamicResource menu_button_foreground_hover}"
+                                 Checked="menuOption_Checked">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Home" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <RadioButton x:Name="settingsBtn"
+                                 Style="{StaticResource menuButton}"
+                                 Tag="{DynamicResource menu_button_foreground_hover}"
+                                 Checked="menuOption_Checked">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Gear" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                        <RadioButton  x:Name="aboutBtn"
+                                 Style="{StaticResource menuButton}"
+                                 Tag="{DynamicResource menu_button_foreground_hover}"
+                                 Checked="menuOption_Checked">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="CircleInfo" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="About" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1"
+                                VerticalAlignment="Bottom">
+
+                        <Button x:Name="botonUser"
+                                Style="{StaticResource userBotton}"
+                                Tag="{DynamicResource menu_button_foreground_hover}"
+                                Click="btnUser_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="UserAlt"  Style="{StaticResource userBottonIcon}"/>
+                                <TextBlock x:Name="userNameTxtBlock"
+                                           Text="Username"
+                                    Style="{StaticResource userButtonText}"/>
+                            </StackPanel>
+                        </Button>
+
+
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+            
+            <!--Main Section-->
+            <Border CornerRadius="0,10,10,0"
+                    Grid.Column="1" Background="{DynamicResource general_background_gradient}">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!--Control bar-->
+                    <StackPanel x:Name="pnlControlBar"
+                                Grid.Row="0"
+                                Orientation="Horizontal"
+                                FlowDirection="RightToLeft"
+                                Background="Transparent"
+                                Margin="0,0,0,0">
+                        
+                        <Button x:Name="btnClose"
+                                Style="{StaticResource closeControlButton}"
+                                Tag="{DynamicResource btnClose_tag}"
+                                Click="btnClose_Click">
+                            <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
+                        </Button>
+
+                        <Button x:Name="btnMaximize"
+                                Style="{StaticResource maximizeControlButton}"
+                                Tag="{DynamicResource btnMaximize_tag}"
+                                Click="btnMaximize_Click">
+                            <fa:IconImage Icon="Square" Style="{StaticResource controlButtonIcon}"/>
+                        </Button>
+                        
+                        <Button x:Name="btnMinimize"
+                                Style="{StaticResource minimizeControlButton}"
+                                Tag="{DynamicResource btnMinimize_tag}"
+                                Click="btnMinimize_Click">
+                            <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
+                        </Button>
+
+                    </StackPanel>
+                    
+                   
+                <!--Content Section-->
+                    <ContentControl x:Name="contentControl"
+                                    Content=""
+                                    Grid.Row="2"
+                                    Margin="10"/>
+                </Grid>
+            </Border>
+            <Frame Name="myFrame" Grid.ColumnSpan="2" NavigationUIVisibility="Hidden" Margin="-5,0,5,0"/>
+        </Grid>
+    </Border>
+</Window>

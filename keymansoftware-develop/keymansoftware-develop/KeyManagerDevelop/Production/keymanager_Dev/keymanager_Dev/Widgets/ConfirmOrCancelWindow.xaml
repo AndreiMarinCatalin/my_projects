@@ -1,0 +1,45 @@
+﻿<Window x:Class="keymanager_Dev.Widgets.ConfirmOrCancelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:keymanager_Dev.Widgets"
+        mc:Ignorable="d"
+        Title="ConfirmOrCancelWindow"
+        Height="200" Width="431"
+        MinHeight="200" MinWidth="431"
+        MaxHeight="200" MaxWidth="431"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent">
+
+
+    <Border CornerRadius="15"
+    BorderThickness="4"
+    Background="{DynamicResource general_background_gradient}"
+    BorderBrush="{DynamicResource general_window_border_gradient}">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Label x:Name="titleLbl" Content="Deleting all history data" Style="{StaticResource labelInformation}" VerticalAlignment="Center" FontSize="20" Margin="10,0,0,0"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Label x:Name="descriptionLbl" Content="You're about to delete all history data. Are you sure ?" Style="{StaticResource labelInformation}" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="confirmBtn" Content="Confirm" Grid.Column="0" Style="{StaticResource customBtnNormal}" Background="{DynamicResource confirmBtn_BorderBrush}" BorderThickness="0" Click="confirmBtn_Click" />
+                <Button x:Name="cancelBtn" Content="Cancel" Grid.Column="1" Style="{StaticResource customBtnNormal}" BorderThickness="0" Click="cancelBtn_Click"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
